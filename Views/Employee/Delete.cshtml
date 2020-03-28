@@ -1,0 +1,21 @@
+﻿@model ProjectMvcAspCore.Models.EmployeeInfo
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+<b>ID : </b>@Html.DisplayFor(model => model.ID)
+<br />
+<b>Name : </b>@Html.DisplayFor(model => model.Name)
+<br />
+<b>Gender : </b>@Html.DisplayFor(model => model.Gender)
+<br />
+<b>Company : </b>@Html.DisplayFor(model => model.Company)
+<br />
+<b>Designation : </b>@Html.DisplayFor(model => model.Designation)
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ID" />
+    <input type="submit" value="Delete" class="btn btn-success" />
+</form>

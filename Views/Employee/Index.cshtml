@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProjectMvcAspCore.Models.EmployeeInfo>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p><a asp-action="Create">Create</a></p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            @*<th>@Html.DisplayFor(model => model.Name)</th>
+        <th>@Html.DisplayFor(model => model.Gender)</th>
+        <th>@Html.DisplayFor(model => model.Company)</th>
+        <th>@Html.DisplayFor(model => model.Designation)</th>*@
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Company</th>
+            <th>Designation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var emp in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelitem => emp.Name)</td>
+            <td>@Html.DisplayFor(modelitem => emp.Gender)</td>
+            <td>@Html.DisplayFor(modelitem => emp.Company)</td>
+            <td>@Html.DisplayFor(modelitem => emp.Designation)</td>
+
+            <td><a asp-action="Edit" asp-route-id="@emp.ID">Edit</a></td>
+            <td><a asp-action="Details" asp-route-id="@emp.ID">View</a></td>
+            <td><a asp-action="Delete" asp-route-id="@emp.ID">Delete</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@model ProjectMvcAspCore.Models.EmployeeInfo
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<b>ID : </b>@Html.DisplayFor(model => model.ID)
+<br />
+<b>Name : </b>@Html.DisplayFor(model => model.Name)
+<br />
+<b>Gender : </b>@Html.DisplayFor(model => model.Gender)
+<br />
+<b>Company : </b>@Html.DisplayFor(model => model.Company)
+<br />
+<b>Designation : </b>@Html.DisplayFor(model => model.Designation)
+
+<a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
+<br />
+<a asp-action="Index">Back To Home</a>
+
